@@ -72,10 +72,7 @@
 
         // TODO 2 - Variable declarations
 
-      
-      
-      
-        var positionX = 0
+       var positionX = 0
        var points = 0
        var speed = 10
        var positionY = 0;
@@ -98,15 +95,15 @@
           speed *= -1;
          }
          else if (positionX < 0) {
-          speed *= -1;
+          speed *= -10;
         }
 
         if(positionY > boardHeight) {
-          speedY *= -1
+          speedY *= -1;
         }
 
         else if (positionY < 0) {
-          speedY *= -1
+          speedY *= -1;
         }
 
           
@@ -125,7 +122,7 @@
         changeBoxText(points)
         points++; // Increases points by 1
         speed = (3 * points) + 10;
-
+       
         
  
 
