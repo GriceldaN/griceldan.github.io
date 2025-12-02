@@ -44,8 +44,12 @@
     <script src="js/runLevels.js"></script>
 
     <!--Load Additional Scripts Here-->
+    <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
+   <script src="game.js"></script>
+
   </head>
-  <body>
+  <body onload="init();">
+    <canvas id="demoCanvas" width="500" height="500"></canvas>
     <div id="main">
       <canvas id="canvas" width="500" height="500"></canvas>
     </div>

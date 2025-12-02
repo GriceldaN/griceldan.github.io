@@ -39,20 +39,48 @@ var background = function (window) {
             // TODO 1:
             // this currently fills the background with an obnoxious yellow;
             // you should modify both the height and color to suit your game
-            var backgroundFill = draw.rect(canvasWidth,canvasHeight,'yellow');
+            var backgroundFill = draw.rect(10000, groundY, ["#041A40"]);
             background.addChild(backgroundFill);
             
             // TODO 2: - Add a moon and starfield
-            
-            
+            var moon = draw.bitmap("img/moon.png");
+            moon.x = 1500;
+            moon.y =10;
+            moon.scaleX = 1.0;
+            moon.scaleY = 1.0;
+            background.addChild(moon);
+
+            //Stars
+            for(let i = 0; i < 110; i++) {
+             var shape = draw.line(5, 10, 10, 10, "white", 5);
+             shape.x = canvasWidth * Math.random();
+             shape.y = groundY * Math.random();
+             background.addChild(shape);   
+          }
+
+          
+
             // TODO 4: Part 1 - Add buildings!     Q: This is before TODO 4 for a reason! Why?
-            
+            for (var i = 0; i < 10; ++i) {
+                var buildingHeight = ((500 * Math.random()) + 200);
+                var building = draw.rect (75, buildingHeight, "rgb(82, 80, 80, 1)", "LightGray", 1);
+                building.x = 200 * i;
+                building.y = groundY - buildingHeight ;
+                background.addChild(building);
+                buildings.push(building);
+            }
             
             // TODO 3: Part 1 - Add a tree
+            
+            tree.x = 120;
+            tree.y = groundY - 220;
+            background.addChild(tree);
             
             
         } // end of render function - DO NOT DELETE
         
+         var tree = draw.bitmap("img/tree.png");
+         var buildings = [];
         
         // Perform background animation
         // called on each timer "tick" - 60 times per second
@@ -63,9 +91,24 @@ var background = function (window) {
             var groundY = ground.y;
             
             // TODO 3: Part 2 - Move the tree!
+            tree.x = tree.x + -2;
+
+            if (tree.x < -200) {
+                tree.x = canvasWidth;
+            }
             
+            
+
             
             // TODO 4: Part 2 - Parallax
+            for (var i = 0; i < buildings.length; i++) {
+                var eachElement = buildings[i];
+
+             eachElement.x = eachElement.x - 3;
+             if (eachElement.x < -200) {
+                eachElement.x = canvasWidth;
+            }
+            }
             
 
         } // end of update function - DO NOT DELETE
