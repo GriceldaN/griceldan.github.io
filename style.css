@@ -49,6 +49,7 @@ main {
     background: rgb(245, 238, 219);
     display: flex;
     margin-top: 20px;
+    border-radius: 15px;
 }
 
 .sidebar {
@@ -71,6 +72,7 @@ main {
     border: 4px silver ridge;
     padding: 8px;
     margin-top: 20px;
+    border-radius: 15px;
 }
 
 h2, h3 {
@@ -85,12 +87,19 @@ h2, h3 {
 #portfolio {
     list-style-type: none;
     padding-left: 0;
-    
+     
     
 }
+#portfolio li{
+  background: #FFFFF0;
+  padding: 10px;
+  border-radius: 15px;
+  margin-bottom: 5px;
 
+}
 #portfolio li:hover {
     background: burlywood;
+    
     
 }
 
