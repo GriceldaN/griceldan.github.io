@@ -50,13 +50,6 @@ for (var j = 0; j < image[i].length; j++){
 
 
 
-function reddify(pixelArray){
- pixelArray[RED] = 200;
-
-}
-var testArray = [200, 100, 100];
-reddify(testArray);
-console.log(testArray); // Should show [200, 100, 100]
 
 
 // TODO 9 Create the applyFilterNoBackground function
@@ -93,6 +86,13 @@ console.log(keepInBounds(300)); // should print 255
 console.log(keepInBounds(125)); // should print 125
 // TODO 4: Create reddify filter function
 
+function reddify(pixelArray){
+ pixelArray[RED] = 200;
+
+}
+var testArray = [200, 100, 100];
+reddify(testArray);
+console.log(testArray); // Should show [200, 100, 100]
 
 // TODO 7 & 8: Create more filter functions
 function decreaseBlue(pixelArray){
